@@ -1,4 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+import less from 'less';
 
-createApp(App).mount('#app')
+const app = createApp(App);
+app.use(less);
+app.mount('#app');
