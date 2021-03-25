@@ -36,7 +36,7 @@ export default defineComponent({
     this.currentRouter = this.menu[0].router
   },
   methods: {
-    toRouter(name) {
+    toRouter(name:string) {
       this.currentRouter = name
       this.$router.push({name})
     }
