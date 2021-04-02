@@ -9,6 +9,7 @@ export default function setup() {
     const setH1 = () => {
         title.value = getTitle(componentName);
     }
+    const value1 = ref('');
 
     const resetH1 = () => {
         title.value = 'H1的初始值'
@@ -17,6 +18,7 @@ export default function setup() {
     onMounted(setH1);
 
     return {
+        value1,
         title,
         resetH1,
     }
