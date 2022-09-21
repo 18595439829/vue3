@@ -16,3 +16,8 @@ import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
 })
 export default class Home extends Vue {}
 </script>
+<style lang="less">
+.home {
+  height: calc(100vh - 60px);
+}
+</style>

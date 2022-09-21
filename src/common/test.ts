@@ -7,12 +7,12 @@
 // })
 // console.log(result);
 
-class Test {
+class Example {
     text: string = 'text';
 }
 
-let inst = new Test();
-console.log(inst instanceof Test);
+let inst = new Example();
+console.log(inst instanceof Example);
 
 let obj = {};
 let arr : any = [];
