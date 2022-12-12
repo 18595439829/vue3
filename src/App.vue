@@ -3,10 +3,6 @@
     <div v-for="item in menu" :selected="item.router === currentRouter" :key="item.name" @click="toRouter(item.router)">
       {{item.name}}
     </div>
-    <div :selected="true">selected</div>
-    <div :selected="false">UnSlected</div>
-    <input type="text" value="123456" :disabled="true" :selected="true">
-    <input type="text" value="654321" :disabled="false" :selected="false">
   </div>
   <router-view/>
 </template>
