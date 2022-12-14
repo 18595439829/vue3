@@ -9,4 +9,16 @@ module.exports = {
     //       }
     //     }
     //   },
+    devServer: {
+        host: 'test.163yun.com', // 本地开发域名
+        disableHostCheck: true,
+        watchOptions: {
+            // 不监听的文件或文件夹，支持正则匹配 意味着node_modules文件变动需要重新运行
+            ignored: /node_modules/,
+            // 监听到变化后等200ms再去执行动作
+            aggregateTimeout: 200,
+            // 默认每秒询问1000次
+            poll: 1000
+        }
+    }
 }

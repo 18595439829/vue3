@@ -23,6 +23,10 @@ export default defineComponent({
         {
           name: 'ComponsitionAPI',
           router: 'ComponsitionAPI',
+        },
+        {
+          name: 'work',
+          router: 'work'
         }
       ],
       currentRouter: '',

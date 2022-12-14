@@ -19,7 +19,7 @@ export default function setup() {
 
   onMounted(() => {
     console.log('mounted')
-    getWorkList()
+    getWorkList();
   })
 
   return {
