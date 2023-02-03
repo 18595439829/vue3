@@ -5,7 +5,7 @@
         {{ work.name }}
       </div>
     </div>
-    <BaseWeather />
+    <BaseWeather @change="change($event, 'weather')"/>
   </div>
 </template>
 
@@ -25,8 +25,12 @@ export default defineComponent({
       console.log('work mounted')
       getWorkList(5)
     })
+    const change = (e:any, val:String) => {
+      console.log(e, val)
+    }
     return {
       workList,
+      change
     }
   },
 })

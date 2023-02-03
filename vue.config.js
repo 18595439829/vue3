@@ -10,7 +10,6 @@ module.exports = {
     //     }
     //   },
     devServer: {
-        host: 'test.163yun.com', // 本地开发域名
         disableHostCheck: true,
         watchOptions: {
             // 不监听的文件或文件夹，支持正则匹配 意味着node_modules文件变动需要重新运行

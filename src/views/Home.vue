@@ -1,20 +1,35 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <img alt="Vue logo" src="../assets/logo.png" />
+    <TheModelDefault v-model="msg" />
+    <TheModelName v-model:title="title" v-model:name="name" />
+    {{ obj.foo + 1 }}
   </div>
 </template>
 
 <script lang="ts">
-import { Options, Vue } from 'vue-class-component';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+import { defineComponent, ref } from 'vue'
+import TheModelDefault from '@/components/TheModelDefault.vue' // @ is an alias to /src
+import TheModelName from '@/components/TheModelName.vue'
 
-@Options({
+export default defineComponent({
   components: {
-    HelloWorld,
+    TheModelDefault,
+    TheModelName,
+  },
+  setup() {
+    const obj = ref({ foo: 0 })
+    const msg = ref('Welcome to Your Vue.js + TypeScript App')
+    const title = ref('传递给子组件的值title')
+    const name = ref('传递给子组件的值name')
+    return {
+      obj,
+      msg,
+      title,
+      name,
+    }
   },
 })
-export default class Home extends Vue {}
 </script>
 <style lang="less">
 .home {

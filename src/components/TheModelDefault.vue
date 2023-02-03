@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <h1>{{ modelValue }}</h1>
+    <button @click="change">修改model</button>
     <div :selected="true">selected</div>
     <div :selected="false">UnSlected</div>
     <input type="text" value="123456" :disabled="true" :selected="true" />
@@ -13,8 +14,13 @@ import { defineComponent } from 'vue'
 
 export default defineComponent({
   props: {
-    msg: { type: String, default: '' },
+    modelValue: { type: String, default: '' },
   },
+  methods: {
+    change() {
+      this.$emit('update:modelValue', 'modelValue-change')
+    }
+  }
 })
 </script>
 

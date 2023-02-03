@@ -32,14 +32,23 @@
         </div>
       </div>
     </div>
+    <button @click="$emit('change', 'emit-value')">emit</button>
+    <div>
+      {{test}}
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import weatherSetup from '@/hooks/useWeather'
+import { ref } from '@vue/reactivity'
 
 const { weatherList } = weatherSetup()
 weatherList
+
+const test = ref('test')
+test
+
 </script>
 
 <style lang="less" module>
