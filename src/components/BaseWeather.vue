@@ -34,7 +34,12 @@
     </div>
     <button @click="$emit('change', 'emit-value')">emit</button>
     <div>
-      {{test}}
+      {{ test }}
+    </div>
+    <div>
+      <div>{{ count }}</div>
+      <div>{{ countRef }}</div>
+      <button @click="add">add</button>
     </div>
   </div>
 </template>
@@ -49,6 +54,15 @@ weatherList
 const test = ref('test')
 test
 
+let count = 0
+let countRef = ref(count)
+
+const add = () => {
+  count++
+  countRef.value++
+  console.log(count)
+}
+add
 </script>
 
 <style lang="less" module>

@@ -6,11 +6,14 @@
       </div>
     </div>
     <BaseWeather @change="change($event, 'weather')"/>
+    <div>{{count}}</div>
+    <div>{{countRef}}</div>
+    <button @click="add">add</button>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted } from 'vue'
+import { defineComponent, onMounted, ref } from 'vue'
 import workSetup from '@/hooks/useWorks'
 import BaseWeather from '@/components/BaseWeather.vue'
 
@@ -28,9 +31,21 @@ export default defineComponent({
     const change = (e:any, val:String) => {
       console.log(e, val)
     }
+
+    let count = 0;
+    let countRef = ref(count);
+
+    const add = () => {
+      count ++
+      countRef.value ++;
+      console.log(count)
+    }
     return {
       workList,
-      change
+      change,
+      count,
+      countRef,
+      add
     }
   },
 })

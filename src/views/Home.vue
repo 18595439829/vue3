@@ -4,6 +4,7 @@
     <TheModelDefault v-model="msg" />
     <TheModelName v-model:title="title" v-model:name="name" />
     {{ obj.foo + 1 }}
+    <TheTestRef />
   </div>
 </template>
 
@@ -11,11 +12,13 @@
 import { defineComponent, ref } from 'vue'
 import TheModelDefault from '@/components/TheModelDefault.vue' // @ is an alias to /src
 import TheModelName from '@/components/TheModelName.vue'
+import TheTestRef from '@/views/TheTestRef.vue'
 
 export default defineComponent({
   components: {
     TheModelDefault,
     TheModelName,
+    TheTestRef
   },
   setup() {
     const obj = ref({ foo: 0 })
